@@ -11,7 +11,7 @@
   boot.loader.systemd-boot.enable = true;
 
   # Networking
-  networking.hostName = "minime"; # Your hostname
+  networking.hostName = "minime";
   networking.networkmanager.enable = true;
 
   # --- CRITICAL: MMC Write-Reduction Settings ---
@@ -21,6 +21,7 @@
   fileSystems."/tmp" = { fsType = "tmpfs"; options = [ "defaults" "size=1g" ]; };
 
   # --- ZFS and Flakes ---
+  # This is the option that was causing the error. It's now correctly placed.
   boot.zfs.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
