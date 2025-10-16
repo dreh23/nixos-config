@@ -22,8 +22,7 @@
 
   # --- ZFS and Flakes ---
   # This is the option that was causing the error. It's now correctly placed.
-  boot.zfs.enable = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # boot.zfs.enable = true;
 
   # --- System Packages ---
   environment.systemPackages = with pkgs; [ vim git ];
